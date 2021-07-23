@@ -1,14 +1,28 @@
 <template>
   <v-container>
-      <v-btn>일단 눌러</v-btn>
+    <shopping-search-form></shopping-search-form>
+    <v-flex d-flex>
+      <v-layout wrap>
+        <v-flex md4>
+          <v-card class="card-container"> </v-card>
+        </v-flex>
+      </v-layout>
+    </v-flex>
   </v-container>
 </template>
 
 <script>
-  export default {
-    name: 'Shopping',
+import ShoppingSearchForm from "./ShoppingSearchForm.vue";
 
-    data: () => ({
-    }),
+export default {
+  name: "Shopping",
+  components: { ShoppingSearchForm },
+  data() {
+    return {
+    };
+  },
+  methods: {
+    
   }
+};
 </script>

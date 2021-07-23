@@ -7,7 +7,9 @@
       <v-spacer/>
       
       <v-btn icon>
-        <v-icon>mdi-message-processing</v-icon>
+        <v-badge :content="messageReadCount" :value="messageReadCount">
+          <v-icon>mdi-message-processing</v-icon>
+        </v-badge>
       </v-btn>
 
       <v-btn icon>
@@ -43,6 +45,11 @@
 <script>
 export default {
   name: 'Header',
+  computed: {
+    messageReadCount() {
+      return this.$store.getters.headerMessageCount;
+    }
+  },
   data: () => ({
     drawer: false,
     group: null,
